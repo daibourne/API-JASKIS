@@ -63,10 +63,12 @@ db.destinations.updateOne({
 
 // 2. Remove Lokinkajou
 
-
+db.destinations.deleteOne({ name: 'Lokinkajou' })
 
 // 3. Delete all bounties sent by Songbird
 
-
+db.destinations.deleteMany({ client: 'Songbird' })
 
 // 4. Update all captured statuses to true
+
+db.destinations.updateMany({ $set: { captured: true } })
